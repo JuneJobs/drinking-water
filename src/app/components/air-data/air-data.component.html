@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-3">
+    <span [ngStyle]="aqi_style">{{shown_aqi.value}}</span>
+  </div>
+  <div class="col-9">
+    <div class="row">
+      <span [ngStyle]="each_air_data_style.PH" (mouseover)="hover('PH')">PH</span>
+      <span [ngStyle]="each_air_data_style.O3" (mouseover)="hover('O3')">Iron</span>
+      <span [ngStyle]="each_air_data_style.NO2" (mouseover)="hover('NO2')">Copper</span>
+      <span [ngStyle]="each_air_data_style.SO2" (mouseover)="hover('SO2')">Nitrate</span>
+      <span [ngStyle]="each_air_data_style.PM25" (mouseover)="hover('PM25')">Nitrite</span>
+      <span [ngStyle]="each_air_data_style.PM10" (mouseover)="hover('PM10')">Lead</span>
+    </div>
+    <div class="row" style="padding-top:20px">
+      <!-------->
+      <span *ngIf="shown_aqi.key == 'PH'" style="margin-left: 2rem" [ngStyle]="details_style">PH</span>
+      <span *ngIf="shown_aqi.key == 'O3'" style="margin-left: 2rem" [ngStyle]="details_style">Iron</span>
+      <span *ngIf="shown_aqi.key == 'NO2'" style="margin-left: 2rem" [ngStyle]="details_style">Copper</span>
+      <span *ngIf="shown_aqi.key == 'SO2'" style="margin-left: 2rem" [ngStyle]="details_style">Nitrate</span>
+      <span *ngIf="shown_aqi.key == 'PM25'" style="margin-left: 2rem" [ngStyle]="details_style">Nitrite</span>
+      <span *ngIf="shown_aqi.key == 'PM10'" style="margin-left: 2rem" [ngStyle]="details_style">Lead</span>
+      <!-------->
+      <span [ngStyle]="details_style">{{air_data[shown_aqi.key]}}</span>
+      <!-------->
+      <span *ngIf="shown_aqi.key == 'PH'" [ngStyle]="details_style"></span>
+      <span *ngIf="shown_aqi.key == 'O3'||shown_aqi.key == 'PM25'||shown_aqi.key == 'PM10'" [ngStyle]="details_style">ppm</span>
+      <span *ngIf="shown_aqi.key == 'NO2'||shown_aqi.key == 'SO2'" [ngStyle]="details_style">ppm</span>
+      <!-------->
+      <span *ngIf="shown_aqi.key == dominent" [ngStyle]="dominent_style"></span>
+      <br>
+    </div>
+    <div class="row" >
+      <span style="font-size: 15px; padding-left: 2rem">{{current_description[0]}}</span>
+    </div>
+  </div>
+</div>

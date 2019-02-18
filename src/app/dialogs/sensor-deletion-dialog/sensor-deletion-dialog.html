@@ -1,0 +1,33 @@
+<h1 mat-dialog-title *ngIf="data.num_of_selected_sensor != 0">Deregister {{data.num_of_selected_sensor == 1 ? 'a
+    sensor' : 'sensors'}}</h1>
+<div mat-dialog-content *ngIf="data.num_of_selected_sensor != 0" class="dialog">
+    <strong>Are you sure to delete {{data.num_of_selected_sensor}} {{data.num_of_selected_sensor == 1 ? 'sensor' :
+        'sensors'}}?</strong>
+    <mat-radio-group *ngIf="false" (change)="choose($event)" style="text-align:left">
+        &nbsp;Choose the reason why you dissociate {{data.num_of_selected_sensor == 1 ? 'sensor' : 'sensors'}}.
+        <mat-radio-button [value]="0">1. A reason is not defined</mat-radio-button><br>
+        <mat-radio-button [value]="1" checked>2. A Device will be handed over to other users</mat-radio-button><br>
+        <mat-radio-button [value]="2">3. A Device is broken</mat-radio-button><br>
+        <mat-radio-button [value]="3">4. A Device is stolen</mat-radio-button><br>
+        <mat-radio-button [value]="4">5. A Device will not be used</mat-radio-button><br>
+        <mat-radio-button [value]="5">6. Incorrect information was provided in registering a Device</mat-radio-button>
+    </mat-radio-group>
+</div>
+<div mat-dialog-actions *ngIf="data.num_of_selected_sensor != 0" style="padding-left: 0.75rem">
+    <button mdbBtn [mat-dialog-close]="data" class="waves-light btnStyle cancel" (click)="btnClick(true)"
+        mdbWavesEffect>Cancel</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mdbBtn [mat-dialog-close]="data" class="waves-light btnStyle primary-variant" (click)="btnClick(false)"
+        mdbWavesEffect>Delete</button>
+</div>
+
+<!-------------------------------------------------------------------------------------------------->
+<!-- If there is not selected sensors-->
+<h1 mat-dialog-title *ngIf="data.num_of_selected_sensor == 0">There is no selected Device</h1>
+<div mat-dialog-content *ngIf="data.num_of_selected_sensor == 0" class="dialog">
+    <strong>Choose Device which you want to delete</strong>
+</div>
+<div mat-dialog-actions *ngIf="data.num_of_selected_sensor == 0" style="padding-left: 6.7rem">
+    <button mdbBtn [mat-dialog-close]="data" class="waves-light btnStyle cancel" style="width: auto" (click)="btnClick(true)"
+        mdbWavesEffect>Cancel</button>
+</div>

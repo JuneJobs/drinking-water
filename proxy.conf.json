@@ -1,0 +1,8 @@
+{
+    "/serverapi/*": {
+      "target": "http://somnium.me:8080",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+}

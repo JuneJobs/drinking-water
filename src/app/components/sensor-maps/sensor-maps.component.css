@@ -1,0 +1,36 @@
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+      #map {
+          height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+
+      body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
+
+      .nation {
+          display: inline-block;
+          margin-right: 1rem;
+          width: 25%
+      }
+
+      .address {
+          display: inline-block;
+          width: 72%;
+          margin-right: 1rem;
+      }
+
+
+      /** Button */
+
+      .buttonStyle {
+          margin-left: 1rem;
+          font-size: 15px;
+          width: auto;
+          border-radius: 100px;
+      }
